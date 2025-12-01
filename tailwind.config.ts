@@ -81,11 +81,18 @@ export default {
           busy: "rgb(239 68 68)",
           offline: "rgb(156 163 175)",
         },
+        brand: {
+          900: "#0f172a",
+          800: "#1e293b",
+          700: "#334155",
+          accent: "#b45309",
+          light: "#f8fafc",
+        },
       },
       fontFamily: {
-        sans: ["var(--font-sans)"],
-        serif: ["var(--font-serif)"],
-        mono: ["var(--font-mono)"],
+        sans: ["Inter", "var(--font-sans)", "sans-serif"],
+        serif: ["'Libre Baskerville'", "var(--font-serif)", "serif"],
+        mono: ["var(--font-mono)", "monospace"],
       },
       keyframes: {
         "accordion-down": {
@@ -100,6 +107,10 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+      },
+      boxShadow: {
+        soft: "0 4px 20px -2px rgba(0, 0, 0, 0.05)",
       },
     },
   },
