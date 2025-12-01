@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scaleup Financial Management | The Complete Finance Function</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Config for Custom Colors/Fonts -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Libre Baskerville', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            900: '#0f172a', /* Oxford Blue */
+                            800: '#1e293b',
+                            700: '#334155',
+                            accent: '#b45309', /* Muted Bronze */
+                            light: '#f8fafc',
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Utilities */
+        .text-serif-display {
+            font-family: 'Libre Baskerville', serif;
+            letter-spacing: -0.02em;
+        }
+        .hero-pattern {
+            background-color: #ffffff;
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        .btn-primary {
+            @apply bg-brand-900 text-white px-6 py-3 rounded hover:bg-brand-accent transition-colors duration-300 font-medium;
+        }
+        .btn-secondary {
+            @apply bg-white text-brand-900 border border-brand-200 px-6 py-3 rounded hover:border-brand-900 hover:bg-gray-50 transition-colors duration-300 font-medium;
+        }
+    </style>
+</head>
+<body class="font-sans text-brand-700 antialiased bg-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <div class="w-8 h-8 bg-brand-900 rounded-sm flex items-center justify-center text-white font-serif font-bold text-xl">S</div>
+                    <span class="font-serif font-bold text-xl text-brand-900 tracking-tight">Scaleup<span class="text-brand-accent">.</span>Financial</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#solutions" class="text-sm font-medium text-gray-600 hover:text-brand-900 transition">Solutions</a>
+                    <a href="#approach" class="text-sm font-medium text-gray-600 hover:text-brand-900 transition">Our Approach</a>
+                    <a href="#pricing" class="text-sm font-medium text-gray-600 hover:text-brand-900 transition">Pricing</a>
+                    <a href="#" class="text-sm font-medium text-gray-600 hover:text-brand-900 transition">Resources</a>
+                </div>
+
+                <!-- CTA -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#" class="text-sm font-medium text-brand-900 hover:text-brand-accent">Client Login</a>
+                    <a href="#contact" class="btn-primary text-sm shadow-soft">Get a Consultation</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-500 hover:text-brand-900 focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 p-4">
+            <a href="#solutions" class="block py-2 text-gray-600 font-medium">Solutions</a>
+            <a href="#approach" class="block py-2 text-gray-600 font-medium">Our Approach</a>
+            <a href="#pricing" class="block py-2 text-gray-600 font-medium">Pricing</a>
+            <a href="#" class="block py-2 text-brand-900 font-bold">Client Login</a>
+            <a href="#contact" class="block mt-4 text-center bg-brand-900 text-white py-3 rounded">Get a Consultation</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden hero-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Content -->
+                <div class="max-w-2xl">
+                    <div class="inline-flex items-center px-3 py-1 rounded-full border border-gray-200 bg-white mb-6 shadow-sm">
+                        <span class="w-2 h-2 bg-brand-accent rounded-full mr-2"></span>
+                        <span class="text-xs font-semibold text-brand-900 uppercase tracking-wide">The New Standard for Growth</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl text-brand-900 font-serif font-bold leading-tight mb-6">
+                        Don't just hire a CFO. <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-900 to-brand-700 italic">Install a Finance Function.</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        We provide the complete financial infrastructure for growing businesses. From day-to-day operations and compliance to board-level strategy. No fractional fixes—just a fully integrated finance department.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="btn-primary text-center">
+                            Build Your Finance Function
+                        </a>
+                        <a href="#solutions" class="btn-secondary text-center group">
+                            Explore Solutions <i class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                    <div class="mt-8 flex items-center gap-4 text-sm text-gray-500">
+                        <div class="flex -space-x-2">
+                            <div class="w-8 h-8 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center text-xs font-bold text-gray-600">JD</div>
+                            <div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-white flex items-center justify-center text-xs font-bold text-gray-600">SM</div>
+                            <div class="w-8 h-8 rounded-full bg-brand-accent border-2 border-white flex items-center justify-center text-xs text-white"><i class="fas fa-check"></i></div>
+                        </div>
+                        <p>Trusted by 200+ growth-stage companies</p>
+                    </div>
+                </div>
+                
+                <!-- Hero Visual -->
+                <div class="relative lg:h-[600px] flex items-center justify-center">
+                    <!-- Abstract representation of finance structure -->
+                    <div class="relative w-full max-w-lg aspect-square bg-brand-900 rounded-sm shadow-2xl p-8 flex flex-col">
+                        <!-- Header UI -->
+                        <div class="flex justify-between items-center mb-8 border-b border-gray-700 pb-4">
+                            <div class="text-white font-serif text-lg">Financial Overview</div>
+                            <div class="flex gap-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Main Graph Area -->
+                        <div class="flex-1 flex items-end gap-2 mb-6">
+                            <div class="w-1/6 bg-brand-700 h-[40%] rounded-t-sm animate-pulse" style="animation-delay: 0.1s"></div>
+                            <div class="w-1/6 bg-brand-700 h-[55%] rounded-t-sm animate-pulse" style="animation-delay: 0.2s"></div>
+                            <div class="w-1/6 bg-brand-700 h-[45%] rounded-t-sm animate-pulse" style="animation-delay: 0.3s"></div>
+                            <div class="w-1/6 bg-brand-700 h-[70%] rounded-t-sm animate-pulse" style="animation-delay: 0.4s"></div>
+                            <div class="w-1/6 bg-white h-[85%] rounded-t-sm shadow-lg relative group transition-all duration-500 hover:bg-brand-accent">
+                                <div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-white text-brand-900 text-xs py-1 px-2 rounded shadow opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap font-bold">
+                                    +124% YoY
+                                </div>
+                            </div>
+                            <div class="w-1/6 bg-brand-accent h-[95%] rounded-t-sm opacity-50"></div>
+                        </div>
+
+                        <!-- Grid Info -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-brand-800 p-4 rounded-sm">
+                                <div class="text-gray-400 text-xs uppercase tracking-wider mb-1">Cash Runway</div>
+                                <div class="text-white text-xl font-bold font-serif">18 Months</div>
+                            </div>
+                            <div class="bg-brand-800 p-4 rounded-sm">
+                                <div class="text-gray-400 text-xs uppercase tracking-wider mb-1">Burn Rate</div>
+                                <div class="text-white text-xl font-bold font-serif">Optimized</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute -right-6 -bottom-6 bg-white p-6 rounded shadow-xl max-w-[200px]">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="bg-green-100 text-green-700 p-2 rounded-full">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <span class="text-sm font-bold text-gray-900">Audit Ready</span>
+                            </div>
+                            <p class="text-xs text-gray-500">Books closed on time, every time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="py-10 border-y border-gray-100 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm font-semibold text-gray-500 uppercase tracking-widest mb-8">Powering the finance function for</p>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <!-- Logos (Using Text Placeholders for compliance) -->
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fas fa-cube text-xl"></i> <span class="font-bold text-lg">BLOCKS</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fas fa-bolt text-xl"></i> <span class="font-bold text-lg">Voltaic</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fas fa-leaf text-xl"></i> <span class="font-bold text-lg">GrowthTree</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fas fa-layer-group text-xl"></i> <span class="font-bold text-lg">StackFin</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fas fa-paper-plane text-xl"></i> <span class="font-bold text-lg">AeroDyne</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="py-24 bg-white" id="approach">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-900 mb-6">
+                    A complete financial ecosystem.<br/>Not just a consultant.
+                </h2>
+                <p class="text-gray-600 text-lg">
+                    Growing businesses often struggle with a fragmented approach—a bookkeeper here, a tax accountant there, and a consultant for strategy. We replace the chaos with a unified, high-performance finance function.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Card 1 -->
+                <div class="p-8 rounded bg-white border border-gray-100 shadow-soft hover:shadow-lg transition duration-300">
+                    <div class="w-14 h-14 bg-blue-50 rounded-sm flex items-center justify-center mb-6 text-brand-900">
+                        <i class="fas fa-cogs text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-brand-900 mb-3">Operational Engine</h3>
+                    <p class="text-gray-600 mb-4">
+                        We automate and manage the tedious: bookkeeping, payroll, AP/AR, and expense management. Your books are always up to date and audit-ready.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-brand-accent mr-2"></i> Month-end close in 5 days</li>
+                        <li class="flex items-center"><i class="fas fa-check text-brand-accent mr-2"></i> Real-time reconciliation</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-8 rounded bg-brand-900 text-white shadow-soft relative overflow-hidden transform md:-translate-y-4">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full -mr-10 -mt-10"></div>
+                    <div class="w-14 h-14 bg-white/10 rounded-sm flex items-center justify-center mb-6 text-white">
+                        <i class="fas fa-chart-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold mb-3">Strategic Intelligence</h3>
+                    <p class="text-gray-300 mb-4">
+                        Turn data into direction. Our FP&A team provides budgeting, forecasting, and unit economics analysis to guide your critical decisions.
+                    </p>
+                    <ul class="text-sm text-gray-300 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-brand-accent mr-2"></i> Cash flow forecasting</li>
+                        <li class="flex items-center"><i class="fas fa-check text-brand-accent mr-2"></i> Scenario planning</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-8 rounded bg-white border border-gray-100 shadow-soft hover:shadow-lg transition duration-300">
+                    <div class="w-14 h-14 bg-blue-50 rounded-sm flex items-center justify-center mb-6 text-brand-900">
+                        <i class="fas fa-landmark text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-brand-900 mb-3">Capital & Governance</h3>
+                    <p class="text-gray-600 mb-4">
+                        Investor-grade reporting and governance that builds confidence. Whether raising Series A or reporting to the board, you look professional.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-brand-accent mr-2"></i> Board deck preparation</li>
+                        <li class="flex items-center"><i class="fas fa-check text-brand-accent mr-2"></i> Due diligence support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Dive Section 1 -->
+    <section class="py-24 bg-brand-light" id="solutions">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <div class="text-brand-accent font-semibold tracking-wider uppercase text-sm mb-2">The Foundation</div>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-900 mb-6">
+                        An Operational Backbone<br> You Can Trust
+                    </h2>
+                    <p class="text-gray-600 text-lg mb-6">
+                        A strategy is only as good as the data it’s based on. We take over the entire finance back-office, implementing robust controls and best-in-class tech stacks (Xero, QuickBooks, Pleo, etc.).
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded bg-white shadow-sm flex items-center justify-center text-brand-900">
+                                <i class="fas fa-receipt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-900">Precision Bookkeeping</h4>
+                                <p class="text-sm text-gray-500">Every transaction categorized correctly. No mess at year-end.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded bg-white shadow-sm flex items-center justify-center text-brand-900">
+                                <i class="fas fa-file-invoice-dollar"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-900">Payables & Receivables</h4>
+                                <p class="text-sm text-gray-500">We manage invoices and chase payments so you maintain cash flow.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 relative">
+                    <div class="absolute inset-0 bg-brand-900 transform translate-x-4 translate-y-4 rounded-sm"></div>
+                    <div class="relative bg-white p-2 rounded-sm shadow-xl">
+                        <!-- Placeholder for dashboard UI -->
+                        <div class="bg-gray-50 rounded aspect-video flex flex-col p-6 border border-gray-100">
+                            <div class="flex justify-between items-center mb-6">
+                                <div class="font-serif font-bold text-xl text-brand-900">Operational Health</div>
+                                <div class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded">Live Data</div>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="h-2 bg-gray-200 rounded w-full">
+                                    <div class="h-2 bg-brand-900 rounded w-3/4"></div>
+                                </div>
+                                <div class="h-2 bg-gray-200 rounded w-full">
+                                    <div class="h-2 bg-brand-700 rounded w-1/2"></div>
+                                </div>
+                                <div class="h-2 bg-gray-200 rounded w-full">
+                                    <div class="h-2 bg-brand-accent rounded w-5/6"></div>
+                                </div>
+                            </div>
+                            <div class="mt-8 grid grid-cols-3 gap-4">
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-brand-900">5</div>
+                                    <div class="text-xs text-gray-500">Days to Close</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-brand-900">100%</div>
+                                    <div class="text-xs text-gray-500">Reconciled</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-brand-900">0</div>
+                                    <div class="text-xs text-gray-500">Errors</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Dive Section 2 -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row-reverse items-center gap-16">
+                <div class="lg:w-1/2">
+                    <div class="text-brand-accent font-semibold tracking-wider uppercase text-sm mb-2">The Strategy</div>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-900 mb-6">
+                        Executive Leadership <br>Without The Headcount
+                    </h2>
+                    <p class="text-gray-600 text-lg mb-6">
+                        You don't need a full-time CFO to get full-time value. Our senior finance partners join your management meetings, challenge your assumptions, and help you navigate fundraising and growth.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded bg-blue-50 shadow-sm flex items-center justify-center text-brand-900">
+                                <i class="fas fa-chess-knight"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-900">Strategic Roadmap</h4>
+                                <p class="text-sm text-gray-500">Connecting financial KPIs to your 12-24 month business goals.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded bg-blue-50 shadow-sm flex items-center justify-center text-brand-900">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-900">Fundraising Partners</h4>
+                                <p class="text-sm text-gray-500">From financial modeling to investor Q&A, we stand beside you.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 relative">
+                    <div class="absolute inset-0 bg-brand-accent opacity-20 transform -translate-x-4 translate-y-4 rounded-sm"></div>
+                    <div class="relative bg-white p-2 rounded-sm shadow-xl">
+                        <!-- Placeholder for dashboard UI -->
+                        <div class="bg-brand-900 rounded aspect-video flex flex-col p-6 text-white overflow-hidden relative">
+                            <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -mr-16 -mt-16"></div>
+                            <div class="font-serif font-bold text-xl mb-2 relative z-10">Board Report: Q3</div>
+                            <div class="text-sm text-gray-400 mb-8 relative z-10">Prepared for Board Meeting</div>
+                            
+                            <div class="grid grid-cols-2 gap-6 relative z-10">
+                                <div class="bg-white/10 p-4 rounded backdrop-blur-sm">
+                                    <div class="text-xs text-gray-300">Revenue Growth</div>
+                                    <div class="text-xl font-bold flex items-center gap-2">
+                                        $2.4M <span class="text-xs bg-green-500 text-white px-1 rounded">+12%</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white/10 p-4 rounded backdrop-blur-sm">
+                                    <div class="text-xs text-gray-300">Burn Multiple</div>
+                                    <div class="text-xl font-bold flex items-center gap-2">
+                                        1.2x <span class="text-xs bg-green-500 text-white px-1 rounded">Optimized</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-6 pt-6 border-t border-white/10 relative z-10">
+                                <div class="text-xs text-gray-400 mb-2">Cash Runway Forecast</div>
+                                <div class="w-full bg-brand-800 h-1.5 rounded-full">
+                                    <div class="bg-brand-accent h-1.5 rounded-full" style="width: 65%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+            <h2 class="text-3xl font-serif font-bold text-brand-900 mb-4">The Financial Backbone for Industry Leaders</h2>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+            <!-- Testimonial 1 -->
+            <div class="bg-white p-8 rounded shadow-sm border border-gray-100">
+                <div class="text-brand-accent mb-4 text-2xl font-serif">“</div>
+                <p class="text-gray-600 mb-6 italic">
+                    "Before Scaleup Financial, our board meetings were debates about data accuracy. Now, they are strategic discussions about growth. The change in confidence is palpable."
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 font-bold">CR</div>
+                    <div class="text-left">
+                        <div class="font-bold text-brand-900 text-sm">Charlotte Rønje</div>
+                        <div class="text-xs text-gray-500">CEO, Jamii.one</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="bg-white p-8 rounded shadow-sm border border-gray-100">
+                <div class="text-brand-accent mb-4 text-2xl font-serif">“</div>
+                <p class="text-gray-600 mb-6 italic">
+                    "We didn't just need a CFO; we needed an entire department. Scaleup provided the system, the people, and the process instantly. It's 10x the value of a single hire."
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 font-bold">KM</div>
+                    <div class="text-left">
+                        <div class="font-bold text-brand-900 text-sm">Kelly McCabe</div>
+                        <div class="text-xs text-gray-500">Founder, Perci Health</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="bg-white p-8 rounded shadow-sm border border-gray-100">
+                <div class="text-brand-accent mb-4 text-2xl font-serif">“</div>
+                <p class="text-gray-600 mb-6 italic">
+                    "Fundraising is brutal. Having Scaleup Financial build our model and handle the due diligence requests was the specific reason we closed our Series A on time."
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 font-bold">RC</div>
+                    <div class="text-left">
+                        <div class="font-bold text-brand-900 text-sm">Rory Codrington</div>
+                        <div class="text-xs text-gray-500">CEO, Trust Keith</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing/Model Section -->
+    <section class="py-24 bg-brand-900 text-white" id="pricing">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">Simple, Scalable Pricing</h2>
+            <p class="text-xl text-gray-300 mb-12">
+                We operate on a subscription model based on your company stage and complexity. No hourly billing, no surprises.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-8 text-left">
+                <div class="bg-white/5 border border-white/10 p-8 rounded hover:bg-white/10 transition">
+                    <h3 class="text-2xl font-serif font-bold mb-2">Growth</h3>
+                    <div class="text-brand-accent font-bold mb-4 text-sm uppercase">For Seed to Series A</div>
+                    <ul class="space-y-3 mb-8 text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check mr-3 text-green-400"></i> Full Operational Finance (Bookkeeping)</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3 text-green-400"></i> Monthly Management Reporting</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3 text-green-400"></i> Quarterly Strategy Sessions</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3 text-green-400"></i> Cash Flow Monitoring</li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center bg-white text-brand-900 py-3 rounded font-bold hover:bg-gray-100 transition">Get a Quote</a>
+                </div>
+
+                <div class="bg-white text-brand-900 p-8 rounded relative">
+                    <div class="absolute top-0 right-0 bg-brand-accent text-white text-xs font-bold px-3 py-1 rounded-bl">MOST POPULAR</div>
+                    <h3 class="text-2xl font-serif font-bold mb-2">Scale</h3>
+                    <div class="text-brand-accent font-bold mb-4 text-sm uppercase">For Series A+ & Rapid Growth</div>
+                    <ul class="space-y-3 mb-8 text-gray-600">
+                        <li class="flex items-center"><i class="fas fa-check mr-3 text-brand-900"></i> Everything in Growth</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3 text-brand-900"></i> Dedicated Finance Director Partner</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3 text-brand-900"></i> Board Meeting Attendance</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3 text-brand-900"></i> Custom Financial Modeling</li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center bg-brand-900 text-white py-3 rounded font-bold hover:bg-brand-800 transition">Get a Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="py-20 bg-white" id="contact">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-serif font-bold text-brand-900 mb-6">Stop managing finance.<br>Start managing growth.</h2>
+            <p class="text-gray-600 mb-8 text-lg">
+                Book a 30-minute consultation to see how we can build your finance function today.
+            </p>
+            <form class="max-w-md mx-auto space-y-4 text-left">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Work Email</label>
+                    <input type="email" placeholder="name@company.com" class="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-brand-900 focus:outline-none">
+                </div>
+                <button type="button" onclick="alert('Thank you for your interest. This is a demo site.')" class="w-full btn-primary text-lg shadow-lg">
+                    Book Consultation
+                </button>
+                <p class="text-xs text-center text-gray-400 mt-4">
+                    By clicking submit, you agree to our Terms and Privacy Policy.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-200 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-6 h-6 bg-brand-900 rounded-sm flex items-center justify-center text-white font-serif font-bold text-xs">S</div>
+                        <span class="font-serif font-bold text-lg text-brand-900">Scaleup<span class="text-brand-accent">.</span></span>
+                    </div>
+                    <p class="text-sm text-gray-500">
+                        The complete finance function for high-growth companies.
+                    </p>
+                    <div class="flex gap-4 mt-4 text-gray-400">
+                        <a href="#" class="hover:text-brand-900"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-brand-900"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-brand-900 mb-4 text-sm">Solutions</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-brand-accent">Operational Finance</a></li>
+                        <li><a href="#" class="hover:text-brand-accent">FP&A</a></li>
+                        <li><a href="#" class="hover:text-brand-accent">Board Reporting</a></li>
+                        <li><a href="#" class="hover:text-brand-accent">Fundraising</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-brand-900 mb-4 text-sm">Company</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-brand-accent">About Us</a></li>
+                        <li><a href="#" class="hover:text-brand-accent">Careers</a></li>
+                        <li><a href="#" class="hover:text-brand-accent">Contact</a></li>
+                        <li><a href="#" class="hover:text-brand-accent">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-brand-900 mb-4 text-sm">Offices</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start gap-2"><i class="fas fa-map-marker-alt mt-1 text-gray-400"></i> London, UK</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-map-marker-alt mt-1 text-gray-400"></i> Copenhagen, DK</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-envelope mt-1 text-gray-400"></i> hello@scaleup.financial</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8 text-center text-sm text-gray-400">
+                &copy; 2025 Scaleup Financial Management. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
