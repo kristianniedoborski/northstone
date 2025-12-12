@@ -80,12 +80,6 @@ export default function Navbar({ onNavigate }: NavbarProps) {
           </div>
 
           <div className="hidden md:flex items-center gap-4">
-            <button
-              className="text-sm font-medium text-brand-900 hover:text-brand-accent transition"
-              data-testid="link-client-login"
-            >
-              Client Login
-            </button>
             <Button
               onClick={() => handleNavClick("contact")}
               className="bg-brand-900 hover:bg-brand-accent text-white shadow-soft"
@@ -137,12 +131,6 @@ export default function Navbar({ onNavigate }: NavbarProps) {
           data-testid="mobile-link-pricing"
         >
           Pricing
-        </button>
-        <button
-          className="block py-2 text-brand-900 font-bold w-full text-left"
-          data-testid="mobile-link-login"
-        >
-          Client Login
         </button>
         <button
           onClick={() => handleNavClick("contact")}

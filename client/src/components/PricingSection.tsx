@@ -32,6 +32,7 @@ const pricingTiers = [
     ],
     price: "11.200 kr.",
     period: "Per month",
+    popular: true,
   },
   {
     id: "iterate",
@@ -45,7 +46,6 @@ const pricingTiers = [
     ],
     price: "17.500 kr.",
     period: "Per month",
-    popular: true,
   },
   {
     id: "scale",

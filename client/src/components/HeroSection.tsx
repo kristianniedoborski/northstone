@@ -32,13 +32,13 @@ export default function HeroSection({ onCtaClick, onExploreClick }: HeroSectionP
             >
               Don't just hire a CFO. <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-900 to-brand-700 italic">
-                Install a Finance Function.
+                Hire a Finance Function.
               </span>
             </h1>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed" data-testid="text-hero-description">
               We provide the complete financial infrastructure for growing
               businesses. From day-to-day operations and compliance to
-              board-level strategy. No fractional fixes—just a fully integrated
+              board-level strategy. No fractional fixes - just a fully integrated
               finance department.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -71,7 +71,7 @@ export default function HeroSection({ onCtaClick, onExploreClick }: HeroSectionP
                   <Check className="h-3 w-3" />
                 </div>
               </div>
-              <p data-testid="text-social-proof">Trusted by 200+ growth-stage companies</p>
+              <p data-testid="text-social-proof">Trusted by 20+ growth-stage companies</p>
             </div>
           </div>
 

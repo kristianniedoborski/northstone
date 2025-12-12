@@ -19,7 +19,7 @@ export default function SolutionsSection() {
             <p className="text-gray-600 text-lg mb-6">
               A strategy is only as good as the data it's based on. We take over
               the entire finance back-office, implementing robust controls and
-              best-in-class tech stacks (Xero, QuickBooks, Pleo, etc.).
+              best-in-class tech stacks (E-conomic, Salary, Pleo, Corpay, Farpay, Francis etc.).
             </p>
             <div className="space-y-4">
               <div className="flex gap-4">
