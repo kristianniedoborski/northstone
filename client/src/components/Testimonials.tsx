@@ -4,21 +4,21 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 const testimonials = [
   {
     quote:
-      "Before Scaleup Financial, our board meetings were debates about data accuracy. Now, they are strategic discussions about growth. The change in confidence is palpable.",
+      "Before Northstone, our board meetings were debates about data accuracy. Now, they are strategic discussions about growth. The change in confidence is palpable.",
     name: "Charlotte Rønje",
     role: "CEO, Jamii.one",
     initials: "CR",
   },
   {
     quote:
-      "We didn't just need a CFO; we needed an entire department. Scaleup provided the system, the people, and the process instantly. It's 10x the value of a single hire.",
+      "We didn't just need a CFO; we needed an entire department. Northstone provided the system, the people, and the process instantly. It's 10x the value of a single hire.",
     name: "Kelly McCabe",
     role: "Founder, Perci Health",
     initials: "KM",
   },
   {
     quote:
-      "Fundraising is brutal. Having Scaleup Financial build our model and handle the due diligence requests was the specific reason we closed our Series A on time.",
+      "Fundraising is brutal. Having Northstone build our model and handle the due diligence requests was the specific reason we closed our Series A on time.",
     name: "Rory Codrington",
     role: "CEO, Trust Keith",
     initials: "RC",

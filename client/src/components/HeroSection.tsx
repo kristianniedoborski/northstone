@@ -1,3 +1,4 @@
+import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check } from "lucide-react";
 
@@ -7,6 +8,15 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ onCtaClick, onExploreClick }: HeroSectionProps) {
+  const [, setLocation] = useLocation();
+
+  const handleExploreClick = () => {
+    if (onExploreClick) {
+      onExploreClick();
+    } else {
+      setLocation("/solutions");
+    }
+  };
   return (
     <section
       id="hero"
@@ -51,7 +61,7 @@ export default function HeroSection({ onCtaClick, onExploreClick }: HeroSectionP
               </Button>
               <Button
                 variant="outline"
-                onClick={onExploreClick}
+                onClick={handleExploreClick}
                 className="border-gray-200 text-brand-900 hover:border-brand-900 hover:bg-gray-50 px-6 py-3 h-auto text-base group"
                 data-testid="button-explore-solutions"
               >

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -9,6 +10,7 @@ interface NavbarProps {
 export default function Navbar({ onNavigate }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [location, setLocation] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,11 +22,47 @@ export default function Navbar({ onNavigate }: NavbarProps) {
 
   const handleNavClick = (section: string) => {
     setIsMobileMenuOpen(false);
-    onNavigate?.(section);
-    const element = document.getElementById(section);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    
+    // Homepage sections that exist on the Home page
+    const homepageSections = ["approach", "pricing", "contact", "solutions"];
+    
+    // If we're not on the home page and clicking a homepage section, navigate to home with hash
+    if (location !== "/" && homepageSections.includes(section)) {
+      // Navigate to home page first
+      setLocation("/");
+      // Then set hash and scroll after a brief delay to ensure page is loaded
+      setTimeout(() => {
+        window.location.hash = section;
+        const element = document.getElementById(section);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 150);
+      return;
     }
+    
+    // If we're on the homepage, use existing behavior
+    if (location === "/") {
+      onNavigate?.(section);
+      const element = document.getElementById(section);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
+  const handleSolutionsClick = () => {
+    setIsMobileMenuOpen(false);
+    setLocation("/solutions");
+  };
+
+  const handleAboutClick = () => {
+    setIsMobileMenuOpen(false);
+    setLocation("/about");
+  };
+
+  const handleLogoClick = () => {
+    setLocation("/");
   };
 
   return (
@@ -38,20 +76,19 @@ export default function Navbar({ onNavigate }: NavbarProps) {
         <div className="flex justify-between items-center h-20">
           <div
             className="flex-shrink-0 flex items-center gap-2 cursor-pointer"
-            onClick={() => handleNavClick("hero")}
+            onClick={handleLogoClick}
             data-testid="link-logo"
           >
-            <div className="w-8 h-8 bg-brand-900 rounded-sm flex items-center justify-center text-white font-serif font-bold text-xl">
-              S
-            </div>
-            <span className="font-serif font-bold text-xl text-brand-900 tracking-tight">
-              Scaleup<span className="text-brand-accent">.</span>Financial
-            </span>
+            <img 
+              src="/northstone-logo.png" 
+              alt="Northstone" 
+              className="h-9 w-auto"
+            />
           </div>
 
           <div className="hidden md:flex space-x-8 items-center">
             <button
-              onClick={() => handleNavClick("solutions")}
+              onClick={handleSolutionsClick}
               className="text-sm font-medium text-gray-600 hover:text-brand-900 transition"
               data-testid="link-solutions"
             >
@@ -72,16 +109,17 @@ export default function Navbar({ onNavigate }: NavbarProps) {
               Pricing
             </button>
             <button
+              onClick={handleAboutClick}
               className="text-sm font-medium text-gray-600 hover:text-brand-900 transition"
-              data-testid="link-resources"
+              data-testid="link-about"
             >
-              Resources
+              About Us
             </button>
           </div>
 
           <div className="hidden md:flex items-center gap-4">
             <Button
-              onClick={() => handleNavClick("contact")}
+              onClick={() => window.open("https://calendly.com/kristian-n-thogersen/30min", "_blank")}
               className="bg-brand-900 hover:bg-brand-accent text-white shadow-soft"
               data-testid="button-consultation"
             >
@@ -112,7 +150,7 @@ export default function Navbar({ onNavigate }: NavbarProps) {
         data-testid="mobile-menu"
       >
         <button
-          onClick={() => handleNavClick("solutions")}
+          onClick={handleSolutionsClick}
           className="block py-2 text-gray-600 font-medium w-full text-left"
           data-testid="mobile-link-solutions"
         >
@@ -133,7 +171,14 @@ export default function Navbar({ onNavigate }: NavbarProps) {
           Pricing
         </button>
         <button
-          onClick={() => handleNavClick("contact")}
+          onClick={handleAboutClick}
+          className="block py-2 text-gray-600 font-medium w-full text-left"
+          data-testid="mobile-link-about"
+        >
+          About Us
+        </button>
+        <button
+          onClick={() => window.open("https://calendly.com/kristian-n-thogersen/30min", "_blank")}
           className="block mt-4 text-center bg-brand-900 text-white py-3 rounded w-full"
           data-testid="mobile-button-consultation"
         >

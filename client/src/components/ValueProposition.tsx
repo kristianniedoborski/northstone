@@ -42,7 +42,7 @@ export default function ValueProposition() {
             Not just a consultant.
           </h2>
           <p className="text-gray-600 text-lg">
-            Growing businesses often struggle with a fragmented approach—a
+            Growing businesses often struggle with a fragmented approach - a
             bookkeeper here, a tax accountant there, and a consultant for
             strategy. We replace the chaos with a unified, high-performance
             finance function.

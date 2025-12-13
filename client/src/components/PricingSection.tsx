@@ -177,7 +177,7 @@ export default function PricingSection({ onGetQuote }: PricingSectionProps) {
               </div>
 
               <Button
-                onClick={onGetQuote}
+                onClick={() => window.open("https://calendly.com/kristian-n-thogersen/30min", "_blank")}
                 className={`w-full ${
                   tier.popular
                     ? "bg-brand-900 hover:bg-brand-accent text-white"
