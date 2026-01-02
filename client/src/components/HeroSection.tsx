@@ -40,9 +40,12 @@ export default function HeroSection({ onCtaClick, onExploreClick }: HeroSectionP
               className="text-4xl md:text-5xl lg:text-6xl text-brand-900 font-serif font-bold leading-tight mb-6"
               data-testid="text-hero-title"
             >
-              Don't just hire a CFO. <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-900 to-brand-700 italic">
                 Hire a Finance Function.
+              </span>
+              <br />
+              <span className="text-xl md:text-2xl lg:text-3xl font-normal not-italic text-gray-700 mt-2 block">
+                Bookkeeping, management reporting and CFO services.
               </span>
             </h1>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed" data-testid="text-hero-description">

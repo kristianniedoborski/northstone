@@ -1,11 +1,9 @@
-import { Layers, Zap, Leaf, Box, Send } from "lucide-react";
-
 const logos = [
-  { icon: Box, name: "BLOCKS" },
-  { icon: Zap, name: "Voltaic" },
-  { icon: Leaf, name: "GrowthTree" },
-  { icon: Layers, name: "StackFin" },
-  { icon: Send, name: "AeroDyne" },
+  { name: "Deloitte", height: "h-8" },
+  { name: "PwC", height: "h-20" },
+  { name: "EY", height: "h-10" },
+  { name: "KPMG", height: "h-8" },
+  { name: "BDO", height: "h-9" },
 ];
 
 export default function SocialProof() {
@@ -13,17 +11,20 @@ export default function SocialProof() {
     <section className="py-10 border-y border-gray-100 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p className="text-sm font-semibold text-gray-500 uppercase tracking-widest mb-8">
-          Powering the finance function for
+          WE ONLY HIRE FROM
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-          {logos.map((logo, index) => (
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
+          {logos.map((logo) => (
             <div
-              key={index}
-              className="flex items-center justify-center gap-2"
+              key={logo.name}
+              className="flex items-center justify-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
               data-testid={`logo-${logo.name.toLowerCase()}`}
             >
-              <logo.icon className="h-5 w-5" />
-              <span className="font-bold text-lg">{logo.name}</span>
+              <img
+                src={`/${logo.name.toLowerCase()}-logo.png`}
+                alt={logo.name}
+                className={`${logo.height} w-auto object-contain`}
+              />
             </div>
           ))}
         </div>
