@@ -61,10 +61,10 @@ export default function Privacy() {
                   <div className="bg-gray-50 p-6 rounded-sm mb-4">
                     <p className="font-semibold text-brand-900 mb-2">Northstone</p>
                     <p className="mb-1">Copenhagen, Denmark</p>
-                    <p className="mb-1">Email: hello@northstone.com</p>
+                    <p className="mb-1">Email: hello@usenorthstone.com</p>
                   </div>
                   <p>
-                    If you have any questions about this Privacy Policy or our data processing practices, please contact us at hello@northstone.com.
+                    If you have any questions about this Privacy Policy or our data processing practices, please contact us at hello@usenorthstone.com.
                   </p>
                 </div>
 
@@ -138,7 +138,7 @@ export default function Privacy() {
                     <li><strong>Right to Withdraw Consent:</strong> Where processing is based on consent, you have the right to withdraw your consent at any time</li>
                   </ul>
                   <p>
-                    To exercise any of these rights, please contact us at hello@northstone.com. We will respond to your request within one month.
+                    To exercise any of these rights, please contact us at hello@usenorthstone.com. We will respond to your request within one month.
                   </p>
                 </div>
 
@@ -242,7 +242,7 @@ export default function Privacy() {
                   </p>
                   <div className="bg-gray-50 p-6 rounded-sm">
                     <p className="font-semibold text-brand-900 mb-2">Northstone</p>
-                    <p className="mb-1">Email: hello@northstone.com</p>
+                    <p className="mb-1">Email: hello@usenorthstone.com</p>
                     <p>Copenhagen, Denmark</p>
                   </div>
                 </div>
