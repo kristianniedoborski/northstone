@@ -44,6 +44,11 @@ export default function Footer() {
                   Case Studies
                 </Link>
               </li>
+              <li>
+                <Link href="/legal" className="text-gray-600 hover:text-brand-accent transition">
+                  Legal
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
