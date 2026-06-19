@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 
 export default function ContactSection() {
@@ -25,7 +26,15 @@ export default function ContactSection() {
             Book Consultation
           </Button>
           <p className="text-xs text-center text-gray-400 mt-4">
-            By clicking submit, you agree to our Terms and Privacy Policy.
+            By clicking submit, you agree to our{" "}
+            <Link href="/legal/eula" className="text-brand-accent hover:text-brand-900">
+              End-User License Agreement
+            </Link>{" "}
+            and{" "}
+            <Link href="/legal/privacy" className="text-brand-accent hover:text-brand-900">
+              Privacy Policy
+            </Link>
+            .
           </p>
         </div>
       </div>

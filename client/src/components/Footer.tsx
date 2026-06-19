@@ -70,14 +70,9 @@ export default function Footer() {
         </div>
         <div className="border-t border-gray-200 pt-6 text-sm text-gray-400 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
           <p>Copyright 2026 Northstone. All rights reserved.</p>
-          <div className="flex gap-4">
-            <Link href="/privacy" className="hover:text-brand-accent transition">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="hover:text-brand-accent transition">
-              Terms of Service
-            </Link>
-          </div>
+          <Link href="/legal" className="hover:text-brand-accent transition">
+            Legal
+          </Link>
         </div>
       </div>
     </footer>

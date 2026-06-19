@@ -11,6 +11,9 @@ import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Privacy from "@/pages/Privacy";
 import Terms from "@/pages/Terms";
+import Legal from "@/pages/Legal";
+import Eula from "@/pages/Eula";
+import Dpa from "@/pages/Dpa";
 import CaseStudies from "@/pages/CaseStudies";
 
 function Redirect({ to }: { to: string }) {
@@ -39,7 +42,13 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/case-studies" component={CaseStudies} />
-      <Route path="/privacy" component={Privacy} />
+      <Route path="/legal" component={Legal} />
+      <Route path="/legal/eula" component={Eula} />
+      <Route path="/legal/privacy" component={Privacy} />
+      <Route path="/legal/dpa" component={Dpa} />
+      <Route path="/privacy">
+        <Redirect to="/legal/privacy" />
+      </Route>
       <Route path="/terms" component={Terms} />
       <Route component={NotFound} />
     </Switch>
